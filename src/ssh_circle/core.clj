@@ -44,7 +44,7 @@
            first
            :message
            (re-find #"\$ ssh -p (\d+) (\w+)\@([\d\.]+)")
-           (zipmap [:match :port :username :ip])))
+           (zipmap [:out :port :username :ip])))
 
 (defn can-ssh-build? [build-json]
   (and (-> build-json :why (= "ssh"))
@@ -78,13 +78,15 @@
     instructions))
 
 (defn launch-ssh-connection [project]
-  (let [{:keys [error port username ip]} (get-ssh-instructions project)]
+  (let [{:keys [error out port username ip]} (get-ssh-instructions project)]
     (if error
       (errorf error)
-      (sh "osascript" :in (format "tell app \"Terminal\"
+      (do
+        (infof out)
+        (sh "osascript" :in (format "tell app \"Terminal\"
                                    do script \"ssh -p %s %s@%s -o StrictHostKeyChecking=no\"
                                    end tell"
-                                  port username ip)))))
+                                    port username ip))))))
 
 (defn -main
   [project]

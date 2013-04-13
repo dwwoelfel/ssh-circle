@@ -1,6 +1,6 @@
 # ssh-circle
 
-Creates a ssh build from the latest [CircleCI](https://circleci.com) build in a project and launches a terminal to ssh in.
+Launches a terminal that SSHs into a retry of the latest [CircleCI](https://circleci.com) build for a given project.
 
 ## Installation
 
@@ -14,6 +14,10 @@ First, get a CircleCI API token from [your account page](https://circleci.com/ac
 To start an ssh build for this project:
 
     CIRCLE_TOKEN=:circle-token java -jar ssh-circle-standalone.jar dwwoelfel/ssh-circle
+
+## Bugs
+
+Terminal launching throws exceptions on non-macs :(
 
 ## License
 
