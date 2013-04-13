@@ -13,7 +13,7 @@ First, get a CircleCI API token from [your account page](https://circleci.com/ac
 
 To start an ssh build for this project:
 
-    CIRCLE_TOKEN=:circle-token java -jar ssh-circle-standalone dwwoelfel/ssh-circle
+    CIRCLE_TOKEN=:circle-token java -jar ssh-circle-standalone.jar dwwoelfel/ssh-circle
 
 ## License
 
