@@ -4,7 +4,7 @@ Creates a ssh build from the latest [CircleCI](https://circleci.com) build in a 
 
 ## Installation
 
-[Download the latest uberjar](https://raw.github.com/dwwoelfel/ssh-circle/artifacts/artifacts/ssh-circle-standalone.jar) created in a CircleCI deployment step.
+[Download the latest uberjar](https://raw.github.com/dwwoelfel/ssh-circle/artifacts/artifacts/ssh-circle-standalone.jar) (created in a CircleCI deployment step!).
 
 
 ## Usage
