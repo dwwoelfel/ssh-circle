@@ -1,0 +1,12 @@
+deployment:
+  artifacts:
+    branch: master
+    commands:
+      - git reset --hard
+      - git checkout -B artifacts
+      - lein uberjar
+      - mkdir artifacts
+      - cp target/ssh-circle-standalone.jar artifacts/
+      - git add artifacts/
+      - git commit -m 'add standalone jar to artifacts'
+      - git push --force origin artifacts
