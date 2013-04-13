@@ -8,5 +8,5 @@ deployment:
       - mkdir artifacts
       - cp target/ssh-circle-standalone.jar artifacts/
       - git add artifacts/
-      - git commit -m 'add standalone jar to artifacts'
+      - git commit -m 'add standalone jar to artifacts' --author="Deploy User <dwwoelfel@gmail.com>"
       - git push --force origin artifacts
