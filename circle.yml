@@ -2,11 +2,13 @@ deployment:
   artifacts:
     branch: master
     commands:
+      - git config user.email "dwwoelfel@gmail.com"
+      - git config user.name "Deploy bot"
       - git reset --hard
       - git checkout -B artifacts
       - lein uberjar
       - mkdir artifacts
       - cp target/ssh-circle-standalone.jar artifacts/
       - git add artifacts/
-      - git commit -m 'add standalone jar to artifacts' --author="Deploy User <dwwoelfel@gmail.com>"
+      - git commit -m 'add standalone jar to artifacts'
       - git push --force origin artifacts
