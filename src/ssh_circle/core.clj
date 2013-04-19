@@ -48,7 +48,7 @@
 
 (defn can-ssh-build? [build-json]
   (and (-> build-json :why (= "ssh"))
-       (-> build-json :lifecycle (= "running"))))
+       (->> build-json :lifecycle (contains? #{"running" "queued"}))))
 
 (defn ssh-instructions [project build_num]
   (let [build (single-build project build_num)]
