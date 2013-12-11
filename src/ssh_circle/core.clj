@@ -40,7 +40,10 @@
            first
            :actions
            first
-           :out
+           :output_url
+           http/get
+           :body
+           (#(json/parse-string % true))
            first
            :message
            (re-find #"\$ ssh -p (\d+) (\w+)\@([\d\.]+)")
