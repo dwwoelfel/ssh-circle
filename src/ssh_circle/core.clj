@@ -21,6 +21,9 @@
 (defn builds [project]
   (api-call :get (format "project/%s" project)))
 
+(defn projects-read-api [project]
+  (api-call :get "projects"))
+
 (defn single-build [project build_num]
   (api-call :get (format "project/%s/%s" project build_num)))
 
